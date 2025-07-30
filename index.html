@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/ele-style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+        <div class="container-fluid">
+            <span class="navbar-brand">Assessment Dashboard</span>
+            <div class="ms-auto">
+                <div class="btn-group" id="roleSelector">
+                    <button class="btn btn-light" data-role="student">Student View</button>
+                    <button class="btn btn-primary" data-role="teacher">Marking teacher View</button>
+                    <button class="btn btn-primary" data-role="tutor">Personal tutor View</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Student Selector -->
+    <div class="container mb-4" id="studentSelector" style="display: none;">
+        <div class="row">
+            <div class="col-md-4">
+                <select class="form-select" id="studentSelect"></select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="container-fluid px-4">
+        <div id="studentView"></div>
+        <div id="teacherView" style="display: none;"></div>
+        <div id="tutorView" style="display: none;"></div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Data Generation -->
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/academic-calendar.js"></script>
+    <script src="js/student-profile.js"></script>
+    <script src="js/assessment-generator.js"></script>
+    <script src="js/submission-generator.js"></script>
+    <script src="js/dataset-generator.js"></script>
+    
+    <!-- View Controllers -->
+    <script src="js/student-view.js"></script>
+    <script src="js/teacher-view.js"></script>
+    <script src="js/tutor-view.js"></script>
+    
+    <!-- Main App -->
+    <script src="js/app.js"></script>
+</body>
+</html>
