@@ -1,5 +1,6 @@
 // dataset-generator.js - Main dataset generation
 
+
 class ModuleGenerator {
     constructor(calendar, assessmentGenerator, submissionGenerator) {
         this.calendar = calendar;
@@ -13,7 +14,7 @@ class ModuleGenerator {
         const selectedModules = modulesList.slice(startIndex, startIndex + 3);
 
         return selectedModules.map(moduleCode => {
-            const assessments = this.assessmentGenerator.generateForModule(moduleCode, term);
+            const assessments = this.assessmentGenerator.generateForModule(moduleCode, term, studentProfile);
             const submissions = assessments.map(assessment => 
                 this.submissionGenerator.generateSubmission(studentProfile, assessment)
             );
@@ -21,7 +22,8 @@ class ModuleGenerator {
             Logger.debug('ModuleGenerator', `Generated module ${moduleCode}`, {
                 moduleCode,
                 assessmentsCount: assessments.length,
-                submissionsCount: submissions.length
+                submissionsCount: submissions.length,
+                extensionsCount: assessments.filter(a => a.hasExtension).length
             });
 
             return {
