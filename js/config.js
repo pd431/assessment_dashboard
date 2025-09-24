@@ -26,10 +26,10 @@ const CONFIG = {
     },
     
     SUBMISSION_PATTERNS: {
-        BASE_ON_TIME_PROB: 0.94,   // 94% base chance for on-time submission
-        BASE_LATE_PROB: 0.05,      // 5% base chance for late submission
-        BASE_MISSING_PROB: 0.01,   // 1% base chance for missing submission
-        ENGAGEMENT_MULTIPLIER: 0.2  // Reduced impact of engagement on submission
+        BASE_ON_TIME_PROB: 0.75,     // 75% base for on-time (more realistic)
+        BASE_LATE_PROB: 0.10,        // 10% submit late without extension
+        BASE_MISSING_PROB: 0.05,     // 5% miss submissions entirely
+        ENGAGEMENT_MULTIPLIER: 0.2   // Reduced impact for more variation
     },
     
     // Assessment generation
@@ -54,6 +54,15 @@ const CONFIG = {
         ON_TIME_MARKING_PROB: 0.85,  // 85% chance of marking within deadline
         LATE_MARKING_PROB: 0.12,     // 12% chance of marking up to a week late
         VERY_LATE_MARKING_PROB: 0.03 // 3% chance of marking more than a week late
+    },
+    
+    // Extension/Mitigation system
+    EXTENSIONS: {
+        AVAILABILITY_WINDOW_BEFORE: 30, // Days before deadline mitigation available
+        AVAILABILITY_WINDOW_AFTER: 1,   // Days after deadline mitigation available
+        SHORT_EXTENSION_DAYS: 7,        // 1 week extension
+        LONG_EXTENSION_DAYS: 14,        // 2 week extension
+        SHORT_EXTENSION_PROB: 0.7       // 70% get 1 week, 30% get 2 weeks
     },
     
     // Similarity checking
